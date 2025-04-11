@@ -248,7 +248,7 @@ function App() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Regular FFT Results */}
                 <div className="bg-indigo-50 dark:bg-indigo-900 rounded-lg p-6 space-y-4">
-                  <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-100">Regular FFT Results</h2>
+                  <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-100">Naive DFT (O(n²)) Results</h2>
                   {regularResults && (
                     <div className="space-y-2">
                       <p className="text-gray-600 dark:text-gray-300">
@@ -270,7 +270,7 @@ function App() {
 
                 {/* FFTfast Results */}
                 <div className="bg-green-50 dark:bg-green-900 rounded-lg p-6 space-y-4">
-                  <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-100">FFTfast Results</h2>
+                  <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-100">Radix-2 Cooley–Tukey FFT (O(n log(n))) Results</h2>
                   {fastResults && (
                     <div className="space-y-2">
                       <p className="text-gray-600 dark:text-gray-300">
@@ -302,13 +302,13 @@ function App() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Regular FFT Chart */}
                 <div className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm">
-                  <h3 className="text-md font-semibold text-gray-800 dark:text-gray-100 mb-2">Regular FFT Visualization</h3>
+                  <h3 className="text-md font-semibold text-gray-800 dark:text-gray-100 mb-2">Naive DFT Visualization</h3>
                   {regularChartData && <Line data={regularChartData} options={{...chartOptions, plugins: {...chartOptions.plugins, title: {...chartOptions.plugins.title, text: 'Regular FFT Results'}}}} />}
                 </div>
 
                 {/* FFTfast Chart */}
                 <div className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm">
-                  <h3 className="text-md font-semibold text-gray-800 dark:text-gray-100 mb-2">FFTfast Visualization</h3>
+                  <h3 className="text-md font-semibold text-gray-800 dark:text-gray-100 mb-2">Radix-2 Cooley–Tukey FFT Visualization</h3>
                   {fastChartData && <Line data={fastChartData} options={{...chartOptions, plugins: {...chartOptions.plugins, title: {...chartOptions.plugins.title, text: 'FFTfast Results'}}}} />}
                 </div>
               </div>
